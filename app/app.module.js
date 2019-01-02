@@ -22,7 +22,7 @@ AppModule = __decorate([
                 port: 3306,
                 username: process.env.DB_USER,
                 password: process.env.DB_PASSWD,
-                database: 'tournament-board',
+                database: 'tornooi',
                 entities: [__dirname + '/**/*.entity{.ts,.js}'],
                 synchronize: false,
             }),
