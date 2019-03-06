@@ -12,12 +12,12 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const auth_service_1 = require("./../../auth/auth.service");
 const constants_1 = require("./../../constants");
 const tournament_entity_1 = require("./../entities/tournament.entity");
 const match_entity_1 = require("./../entities/match.entity");
 const team_entity_1 = require("./../entities/team.entity");
 const group_entity_1 = require("./../entities/group.entity");
-const auth_service_1 = require("auth/auth.service");
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
