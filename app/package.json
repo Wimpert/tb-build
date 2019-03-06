@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write \"**/*.ts\"",
-    "start": "DB_NAME=tournament-board DB_USER=root DB_passwd= ts-node -r tsconfig-paths/register src/main.ts",
-    "start:dev": "DB_NAME=tournament-board DB_USER=root DB_passwd= nodemon",
+    "start": "JWT_SECRET=DEV_DE_JACKIES_SECRET DB_NAME=tournament-board DB_USER=root DB_passwd= ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "JWT_SECRET=DEV_DE_JACKIES_SECRET DB_NAME=tournament-board DB_USER=root DB_passwd= nodemon",
     "prestart:prod": "rm -rf dist && tsc",
     "start:prod": "node dist/main.js",
     "start:hmr": "node dist/server",
@@ -18,6 +18,7 @@
     "build_prod_and_copy": "rm -rf dist && tsc; mkdir -p ../tb-build/app && rm -rf ../tb-build/app && cp -rf dist/. ../tb-build/app && cp package.json ../tb-build/app"
   },
   "dependencies": {
+    "@nest-middlewares/cookie-parser": "^5.1.1",
     "@nestjs/common": "^5.0.0-beta.6",
     "@nestjs/core": "^5.0.0-beta.6",
     "@nestjs/jwt": "^0.2.1",
@@ -27,8 +28,11 @@
     "@nestjs/typeorm": "^5.2.2",
     "@nestjs/websockets": "^5.0.0-beta.6",
     "bcrypt": "^3.0.3",
+    "date-fns": "^1.30.1",
     "fastify-formbody": "^2.0.0",
+    "install": "^0.12.2",
     "mysql": "^2.16.0",
+    "npm": "^6.7.0",
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
     "passport-jwt": "^4.0.0",
