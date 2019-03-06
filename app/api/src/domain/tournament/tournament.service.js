@@ -24,7 +24,7 @@ const typeorm_2 = require("typeorm");
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
 const date_fns_1 = require("date-fns");
-const round_entity_1 = require("domain/entities/round.entity");
+const round_entity_1 = require("../entities/round.entity");
 let TournamentService = class TournamentService {
     constructor(tournamentRepository, authService) {
         this.tournamentRepository = tournamentRepository;
