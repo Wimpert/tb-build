@@ -46,6 +46,8 @@ let PublicTournamentController = class PublicTournamentController {
         return this.groupService.findOne({ id }).pipe(operators_1.map((group) => {
             this.tournamentService.processMatchesOfGroup(group);
             return group;
+        }), operators_1.map((group) => {
+            return Object.assign({}, group, { teams: group.teams.sort(this.tournamentService.compareTeams) });
         }));
     }
     getMatches(request, ids) {
